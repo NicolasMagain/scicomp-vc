@@ -2,6 +2,7 @@
 import pandas
 import glob
 
+
 def detect_problems(filename):
     data = pandas.read_table(filename, header=None)
     data.columns = ['chrom','chromStart','chromEnd','name','score','strand','level','signif','score2']
