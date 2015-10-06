@@ -2,6 +2,7 @@
 import pandas
 import glob
 
+
 def detect_problems(filename):
     data = pandas.read_table(filename, header=None)
     data.columns = ['chrom','chromStart','chromEnd','name','score','strand','level','signif','score2']
@@ -13,6 +14,6 @@ def detect_problems(filename):
         print 'Seems OK!'
         
 filenames = glob.glob('/Users/dcl9/gcbCourse/materials/cshl_rna_seq/*.bed*')
-for f in filenames:
+for f in filenames[:3]:
     print f
     detect_problems(f)
